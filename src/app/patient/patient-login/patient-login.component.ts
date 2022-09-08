@@ -29,6 +29,7 @@ export class PatientLoginComponent implements OnInit {
       this._patientService.patientLogin(result).subscribe(
         (response: any) => {
           console.log("Patient login response", response);
+          localStorage.setItem('userData', JSON.stringify(response.body))
           // set state here
         },
         (error: any) => {
