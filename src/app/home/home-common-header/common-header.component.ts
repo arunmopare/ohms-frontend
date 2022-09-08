@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
 })
 export class CommonHeaderComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-onSelect(){
-this.router.navigate(['/patient/reg']);
-}
+  onSelect() {
+    this.router.navigate(['/patient/registration']);
+  }
 }
