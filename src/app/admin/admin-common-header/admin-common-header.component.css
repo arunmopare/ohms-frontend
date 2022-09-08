@@ -1,0 +1,25 @@
+.contentabc {
+    background: rgb(0, 0, 0);  
+    background: rgba(0, 0, 0, 0.5); 
+    color: white;
+  } 
+  
+  .bg-image {
+    /* The image used */
+    background-image: url("/image/background/background1.jpg");
+    /* Add the blur effect */
+    
+   /* background-color: transparent;*/
+     background-size: cover; 
+  }
+  
+  .bg-tableHspListcontact{
+   background-color:white;
+   filter: drop-shadow(5px 5px 5px #222); 
+    opacity: 1;
+  }
+  
+  .forshadow{
+  filter: drop-shadow(5px 5px 5px #222); 
+  }
+  
