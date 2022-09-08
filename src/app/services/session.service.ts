@@ -1,26 +1,28 @@
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class SessionService {
-
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
   setPatientSession(patientData: any) {
-    localStorage.setItem("patientData", JSON.stringify(patientData))
-    this.router.navigate(['/patient/dashboard'])
+    localStorage.setItem("patientData", JSON.stringify(patientData));
+    this.router.navigate(["/patient/dashboard"]);
+  }
+  updatePatientSession(patientData: any) {
+    localStorage.setItem("patientData", JSON.stringify(patientData));
   }
 
   getPatientSession() {
-    return localStorage.getItem("patientData")
+    return localStorage.getItem("patientData");
   }
 
   logOutPatient() {
     if (localStorage.getItem("patientData")) {
-      localStorage.removeItem("patientData")
+      localStorage.removeItem("patientData");
     }
-    this.router.navigate(['/patient/login'])
+    this.router.navigate(["/patient/login"]);
   }
 
   isPatientLoggedIn() {

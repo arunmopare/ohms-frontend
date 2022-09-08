@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: "patient/dashboard", component: PatientDashboardComponent },
   { path: 'patient/profile', component: PatientProfileComponent },
   { path: "patient/login", component: PatientLoginComponent },
-  { path: "patient/update-opt", component: PatientUpdateProfileComponent },
+  { path: "patient/update", component: PatientUpdateProfileComponent },
 
   { path: "**", component: PageNotFoundComponent },
 ];

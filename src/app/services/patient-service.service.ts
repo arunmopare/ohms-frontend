@@ -16,7 +16,7 @@ export class PatientService {
   private _registrationRoute = "patient/register";
 
   private _loginRoute = "patient/AuthPtlogin";
-  private _updateRoute = "patient/update-opt";
+  private _updateRoute = "patient/upd-patient";
 
   private _registerUserUrl = this._apiEndpoint + this._registrationRoute;
   private _loginPatientUrl = this._apiEndpoint + this._loginRoute;
@@ -34,8 +34,8 @@ export class PatientService {
     return this.http.post<any>(this._loginPatientUrl, data);
   }
 
-  patientUpdate(data: PatientAuthLoginInterface): Observable<PatientAccount> {
+  patientUpdate(data: PatientAccount): Observable<PatientAccount> {
     console.log("PatientUpdateData", data);
-    return this.http.put<any>(this._updatePatientUrl, data);
+    return this.http.post<any>(this._updatePatientUrl, data);
   }
 }

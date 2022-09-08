@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { PatientService } from "src/app/services/patient-service.service";
 import { SessionService } from "src/app/services/session.service";
 import { PatientAccount } from "../patient.interface";
 
@@ -8,23 +9,36 @@ import { PatientAccount } from "../patient.interface";
   styleUrls: ["./patient-update-profile.component.css"],
 })
 export class PatientUpdateProfileComponent implements OnInit {
-  patient: PatientAccount = {}
+  patient: PatientAccount = {};
   u: number = 2;
-  constructor(private _sessionService: SessionService) {
-
-  }
+  constructor(
+    private _sessionService: SessionService,
+    private _patientService: PatientService
+  ) {}
 
   ngOnInit(): void {
     if (this._sessionService.isPatientLoggedIn()) {
       var session = this._sessionService.getPatientSession();
       if (session) {
-        this.patient = JSON.parse(session)
+        console.log(session);
+
+        this.patient = JSON.parse(session);
       }
     }
   }
-  onClickSubmit(result: any) {
-    console.log('====================================');
+  onClickSubmit(result: PatientAccount) {
     console.log(result);
-    console.log('====================================');
+    this._patientService.patientUpdate(result).subscribe(
+      (response: any) => {
+        console.log("patient login response", response);
+        this._sessionService.updatePatientSession(response);
+        this.patient = response;
+        this.u = 1;
+      },
+      (error: any) => {
+        console.log(error);
+        this.u = 3;
+      }
+    );
   }
 }

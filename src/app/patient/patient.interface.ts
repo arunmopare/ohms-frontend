@@ -10,6 +10,6 @@ export interface PatientAccount {
 }
 
 export interface PatientAuthLoginInterface {
-    ptUsername: string;
-    ptPassword: string;
+    ptUsername?: string;
+    ptPassword?: string;
 }

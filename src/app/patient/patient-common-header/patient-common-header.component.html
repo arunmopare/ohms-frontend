@@ -18,10 +18,10 @@
       </button>
     </form>
 
-    <form action="update-opt" method="get">
+    <form >
       <div>
         <input type="hidden" name="id" value="{{ patient.ptId }}" readonly />
-        <button class="btn btn-sm btn-white mr-3" type="submit">
+        <button class="btn btn-sm btn-white mr-3" routerLink="/patient/update" >
           <i class="fas fa-user-edit"></i> Update Profile
         </button>
       </div>
