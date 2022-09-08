@@ -38,17 +38,13 @@
 
     <div class="form-container sign-in-container">
 
-        <form action="registered" method="post">
+        <form ngNativeValidate #userRegistrationForm="ngForm" (ngSubmit)="onClickSubmit(userRegistrationForm.value)">
 
-            <div *ngIf="deletallyy==1" class="alert alert-success" style="color:green">Registration Success</div>
-
-
-
+            <div *ngIf=" deletallyy==1" class="alert alert-success" style="color:green">Registration Success
+            </div>
             <div *ngIf="deletallyy==0" class="alert alert-warning" style="color:orange">Registration Main <br>
                 <small>Username/password already exist.</small>
             </div>
-
-
 
             <div *ngIf="patReg==1 " class=" alert alert-success" style="color:green">Registration Success</div>
 
@@ -62,27 +58,29 @@
             <h3><b>Create Account</b></h3>
 
             <input class="form-control form-control-sm" type="text" name="ptName" placeholder="Name"
-                pattern="^[a-zA-z]+([\s][a-zA-Z]+)*$" required autocomplete="off"
-                title="Only characters are allowed.." />
+                pattern="^[a-zA-z]+([\s][a-zA-Z]+)*$" required autocomplete="off" title="Only characters are allowed.."
+                ngModel>
             <input class="form-control form-control-sm" type="text" name="age" placeholder="Age"
-                Pattern="^(0?[1-9]|[1-9][0-9]|[1][1-9][1-9]|200)$" required autocomplete="off"
-                title="Not valid age.." />
+                Pattern="^(0?[1-9]|[1-9][0-9]|[1][1-9][1-9]|200)$" required autocomplete="off" title="Not valid age.."
+                ngModel>
             <input class="form-control form-control-sm" type="email" name="ptGmail" placeholder="Email"
                 pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z]{5})\.([a-zA-Z]{3})$" required autocomplete="off"
-                title="Enter valid email.." />
+                title="Enter valid email.." ngModel>
             <input class="form-control form-control-sm" type="text" name="ptMobile" placeholder="Phone No"
-                Pattern="[789][0-9]{9}" required autocomplete="off" title="Mobile number should be 10 digit.." />
+                Pattern="[789][0-9]{9}" required autocomplete="off" title="Mobile number should be 10 digit.." ngModel>
             <input class="form-control form-control-sm" type="text" name="ptUsername" placeholder="UserName"
                 pattern="[A-Za-z0-9]{1,15}" required autocomplete="off"
-                title="Username only contains characters & numbers.." />
+                title="Username only contains characters & numbers.." ngModel>
             <input class="form-control form-control-sm" type="password" name="ptPassword" placeholder="Password"
                 pattern="[A-Za-z0-9]{1,10}" required autocomplete="off"
-                title="Password only contains characters & numbers.." />
+                title="Password only contains characters & numbers.." ngModel>
 
-            <button>Register</button>
+
+            <button value="submit" type="submit">Register</button>
             <a href="/home">Go to home</a>
 
         </form>
+
     </div>
 
     <div class="overlay-container">
@@ -90,7 +88,7 @@
             <div class="overlay-panel overlay-right">
                 <h1>Hello, Friend !</h1>
                 <p>Enter your personal details and start journey with us</p>
-                <button class="ghost" id="signUp">Sign In</button>
+                <button (click)="navigateToPatientLogin()" class="ghost" id="signUp">Sign In</button>
             </div>
             <div class="overlay-panel overlay-left">
                 <h1>Welcome Back !</h1>

@@ -13,6 +13,7 @@ import { SearchHospitalComponent } from "./home/search-hospital/search-hospital.
 import { FormsModule } from "@angular/forms";
 import { PatientComponent } from './patient/patient.component';
 import { PatientRegistrationComponent } from './patient/patient-registration/patient-registration.component';
+import { LoginComponent } from './patient/login/login.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { PatientRegistrationComponent } from './patient/patient-registration/pat
     SearchHospitalComponent,
     PatientComponent,
     PatientRegistrationComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
   providers: [],
