@@ -14,7 +14,6 @@ export class SessionService {
 
   getPatientSession() {
     return localStorage.getItem("patientData")
-
   }
 
   logOutPatient() {

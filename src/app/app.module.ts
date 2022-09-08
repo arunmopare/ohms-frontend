@@ -15,7 +15,11 @@ import { PatientComponent } from './patient/patient.component';
 import { PatientRegistrationComponent } from './patient/patient-registration/patient-registration.component';
 import { PatientLoginComponent } from './patient/patient-login/patient-login.component';
 import { PatientDashboardComponent } from './patient/patient-dashboard/patient-dashboard.component';
+<<<<<<< HEAD
 import { PatientCommonHeaderComponent } from './patient/patient-common-header/patient-common-header.component';
+=======
+import { PatientProfileComponent } from './patient/patient-profile/patient-profile.component';
+>>>>>>> 70199b58ca77e1335212b49e51f1e3fc9b944f29
 
 
 @NgModule({
@@ -32,7 +36,11 @@ import { PatientCommonHeaderComponent } from './patient/patient-common-header/pa
     PatientRegistrationComponent,
     PatientLoginComponent,
     PatientDashboardComponent,
+<<<<<<< HEAD
     PatientCommonHeaderComponent,
+=======
+    PatientProfileComponent,
+>>>>>>> 70199b58ca77e1335212b49e51f1e3fc9b944f29
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
   providers: [],
