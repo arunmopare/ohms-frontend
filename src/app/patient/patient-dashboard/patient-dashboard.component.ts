@@ -12,8 +12,5 @@ export class PatientDashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  logPatientOut() {
-    this._sessionService.logOutPatient()
-  }
 
 }

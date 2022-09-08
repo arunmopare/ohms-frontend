@@ -6,12 +6,13 @@ import {
   PatientAccount,
   PatientAuthLoginInterface,
 } from "../patient/patient.interface";
+import { ROOT_API_ENDPOINT } from "./constants";
 
 @Injectable({
   providedIn: "root",
 })
 export class PatientService {
-  private _apiEndpoint = "http://localhost:9090/";
+  private _apiEndpoint = ROOT_API_ENDPOINT;
 
   private _registrationRoute = "patient/register";
 
@@ -22,7 +23,7 @@ export class PatientService {
   private _loginPatientUrl = this._apiEndpoint + this._loginRoute;
   private _updatePatientUrl = this._apiEndpoint + this._updateRoute;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   patientRegistration(data: PatientAccount): any {
     console.log("data", data);

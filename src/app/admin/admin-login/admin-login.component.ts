@@ -13,7 +13,7 @@ export class AdminLoginComponent implements OnInit {
   constructor(
     private _adminService: AdminServiceService,
     private _sessionService: SessionService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     if (this._sessionService.isAdminLoggedIn()) {
@@ -33,8 +33,8 @@ export class AdminLoginComponent implements OnInit {
         this.admin = response;
       },
       (error: any) => {
-        console.log(error);
-        this.AdmLogFail == 0;
+        console.log("inside error", error);
+        this.AdmLogFail = 0;
       }
     );
   }
