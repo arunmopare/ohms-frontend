@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AdminDashboardComponent } from "./admin/admin-dashboard/admin-dashboard.component";
 import { AdminLoginComponent } from "./admin/admin-login/admin-login.component";
+import { HospitalListComponent } from "./admin/hospital-list/hospital-list.component";
 import { AboutusComponent } from "./home/aboutus/aboutus.component";
 import { ContactusComponent } from "./home/contactus/contactus.component";
 import { HomeComponent } from "./home/home.component";
@@ -27,6 +28,8 @@ const routes: Routes = [
   { path: "patient/update", component: PatientUpdateProfileComponent },
   { path: "admin/login", component: AdminLoginComponent },
   { path: "admin/dashboard", component: AdminDashboardComponent },
+  { path: "admin/hspList", component: HospitalListComponent },
+
   { path: "**", component: PageNotFoundComponent },
 ];
 

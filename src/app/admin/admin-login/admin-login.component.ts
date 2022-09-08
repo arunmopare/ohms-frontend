@@ -18,7 +18,7 @@ export class AdminLoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    if (this._sessionService.isPatientLoggedIn()) {
+    if (this._sessionService.isAdminLoggedIn()) {
       this._router.navigate(['/admin/dashboard'])
     }
     // if (this._sessionService.isAdminLoggedIn()) {

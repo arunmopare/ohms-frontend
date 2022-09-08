@@ -1,0 +1,45 @@
+<app-admin-common-header></app-admin-common-header>
+<div *ngIf="HSPLIST == 1" class="row">
+    <div class="mx-auto">
+        <br />
+
+        <div class="text-align: center">
+            <h4 style="color: black">Hospital Details</h4>
+        </div>
+        <table class="table border-dark table-bordered bg-tableHspListcontact" style="color: black">
+            <tr>
+                <th>Sr.No</th>
+                <th>Hospital Id</th>
+                <th><i class="fas fa-hospital"></i> Hospital Name</th>
+                <th><i class="fas fa-map-marker-alt"></i> Hospital Address</th>
+                <th><i class="fas fa-edit"></i> Edit Action</th>
+                <th><i class="fas fa-minus-circle"></i> Delete Action</th>
+            </tr>
+
+            <tr *ngFor="let hospital of hspList; index as j">
+                <th style="text-align: center">{{ j + 1 }}</th>
+                <th>{{ hospital.hspId }}</th>
+                <th>{{ hospital.hspName }}</th>
+                <th style="text-align: center">{{ hospital.hspAdd }}</th>
+
+                <th style="text-align: center">
+                    <form action="editHspOpt" method="get">
+                        <input type="hidden" name="id" value="{{ hospital.hspId }}" readonly />
+                        <button class="btn btn-sm btn-success" type="submit">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                    </form>
+                </th>
+
+                <th style="text-align: center">
+                    <form action="deleteHsp" method="get">
+                        <input type="hidden" name="id" value="{{ hospital.hspId }}" readonly />
+                        <button class="btn btn-sm btn-warning" type="submit">
+                            <i class="fas fa-minus-circle"></i> Delete
+                        </button>
+                    </form>
+                </th>
+            </tr>
+        </table>
+    </div>
+</div>
