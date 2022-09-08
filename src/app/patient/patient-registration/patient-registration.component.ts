@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PatientService } from 'src/app/services/patient-service.service';
 import { PatientAccount } from './patient.interface';
 
 @Component({
@@ -8,20 +9,20 @@ import { PatientAccount } from './patient.interface';
   styleUrls: ['./patient-registration.component.css']
 })
 export class PatientRegistrationComponent implements OnInit {
-  ptLogFail = 1;
-  patReg = 1;
-  deletallyy = 0;
+  ptLogFail = 2;
+  patReg = 2;
+  deletallyy = 2;
 
   registrationForm: PatientAccount = {
     ptName: "",
-    age: 0,
+    ptAge: 0,
     ptGmail: "",
     ptMobile: 0,
     ptUsername: "",
     ptPassword: ""
 
   }
-  constructor(private router: Router) { }
+  constructor(private router: Router, private _patientService: PatientService) { }
 
   ngOnInit(): void {
   }
@@ -32,9 +33,16 @@ export class PatientRegistrationComponent implements OnInit {
 
   onClickSubmit(result: PatientAccount) {
     this.registrationForm = result;
-    console.log('====================================');
-    console.log(this.registrationForm);
-    console.log('====================================');
+
+    this._patientService.patientRegistration(result).subscribe(
+      (response: any) => {
+        console.log(response);
+      },
+      (error: any) => {
+        console.log(error);
+      }
+
+    );
   }
 
 }

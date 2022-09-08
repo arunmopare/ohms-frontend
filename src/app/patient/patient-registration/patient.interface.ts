@@ -1,6 +1,6 @@
 export interface PatientAccount {
     ptName: string;
-    age: number;
+    ptAge: number;
     ptGmail: string;
     ptMobile: number;
     ptUsername: string;
