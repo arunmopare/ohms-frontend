@@ -18,6 +18,7 @@ import { PatientDashboardComponent } from "./patient/patient-dashboard/patient-d
 import { PatientCommonHeaderComponent } from "./patient/patient-common-header/patient-common-header.component";
 import { PatientProfileComponent } from "./patient/patient-profile/patient-profile.component";
 import { PatientUpdateProfileComponent } from './patient/patient-update-profile/patient-update-profile.component';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { PatientUpdateProfileComponent } from './patient/patient-update-profile/
     PatientCommonHeaderComponent,
     PatientProfileComponent,
     PatientUpdateProfileComponent,
+    AdminLoginComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
   providers: [],

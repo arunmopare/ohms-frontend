@@ -31,4 +31,31 @@ export class SessionService {
     }
     return false;
   }
+
+  //Admin Session Services
+  setAdminSession(adminData: any) {
+    localStorage.setItem("adminData", JSON.stringify(adminData));
+    this.router.navigate(["/admin/dashboard"]);
+  }
+  updateAdminSession(adminData: any) {
+    localStorage.setItem("adminData", JSON.stringify(adminData));
+  }
+
+  getAdminSession() {
+    return localStorage.getItem("adminData");
+  }
+
+  logOutAdmin() {
+    if (localStorage.getItem("adminData")) {
+      localStorage.removeItem("adminData");
+    }
+    this.router.navigate(["/admin/login"]);
+  }
+
+  isAdminLoggedIn() {
+    if (localStorage.getItem("adminData")) {
+      return true;
+    }
+    return false;
+  }
 }
