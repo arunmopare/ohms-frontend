@@ -14,6 +14,7 @@ import { FormsModule } from "@angular/forms";
 import { PatientComponent } from './patient/patient.component';
 import { PatientRegistrationComponent } from './patient/patient-registration/patient-registration.component';
 import { PatientLoginComponent } from './patient/patient-login/patient-login.component';
+import { PatientDashboardComponent } from './patient/patient-dashboard/patient-dashboard.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { PatientLoginComponent } from './patient/patient-login/patient-login.com
     PatientComponent,
     PatientRegistrationComponent,
     PatientLoginComponent,
+    PatientDashboardComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
   providers: [],

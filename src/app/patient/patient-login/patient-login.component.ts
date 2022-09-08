@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PatientService } from 'src/app/services/patient-service.service';
+import { SessionService } from 'src/app/services/session.service';
 import { PatientAuthLoginInterface } from '../patient.interface';
 
 @Component({
@@ -17,9 +19,12 @@ export class PatientLoginComponent implements OnInit {
   ptPassFail = 2;
   ptPassUpdated = 2;
   ptLogFail = 2;
-  constructor(private _patientService: PatientService) { }
+  constructor(private router: Router, private _patientService: PatientService, private _sessionService: SessionService) { }
 
   ngOnInit(): void {
+    if (this._sessionService.isPatientLoggedIn()) {
+      this.router.navigate(['/patient/dashboard'])
+    }
   }
 
   onClickSubmit(result: PatientAuthLoginInterface) {
@@ -29,7 +34,7 @@ export class PatientLoginComponent implements OnInit {
       this._patientService.patientLogin(result).subscribe(
         (response: any) => {
           console.log("Patient login response", response);
-          localStorage.setItem('userData', JSON.stringify(response.body))
+          this._sessionService.setPatientSession(response)
           // set state here
         },
         (error: any) => {
