@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PatientService } from 'src/app/services/patient-service.service';
-import { PatientAccount } from './patient.interface';
+import { PatientAccount } from '../patient.interface';
 
 @Component({
   selector: 'app-patient-registration',
@@ -37,6 +37,7 @@ export class PatientRegistrationComponent implements OnInit {
     this._patientService.patientRegistration(result).subscribe(
       (response: any) => {
         console.log(response);
+        // set state here
       },
       (error: any) => {
         console.log(error);

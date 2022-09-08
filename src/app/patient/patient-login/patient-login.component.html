@@ -40,11 +40,9 @@
         </form>
     </div>
     <div class="form-container sign-in-container">
-        <form action="AuthPtlogin" method="post">
+        <form ngNativeValidate #userLoginForm="ngForm" (ngSubmit)="onClickSubmit(userLoginForm.value)">
 
             <div *ngIf="ptLogFail==0" class="alert alert-warning"> Invalid Login</div>
-
-
 
             <div *ngIf="ptPassFail==1" class="alert alert-success" style="color:green">
                 <h6> Please check your email</h6>
