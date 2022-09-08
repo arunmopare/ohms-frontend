@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { AdminAuthLoginInterface } from "../admin";
 import { AdminServiceService } from "../../services/admin-service.service";
 import { SessionService } from "src/app/services/session.service";
+import { Router } from "@angular/router";
 @Component({
   selector: "app-admin-login",
   templateUrl: "./admin-login.component.html",
@@ -12,18 +13,20 @@ export class AdminLoginComponent implements OnInit {
   admin: AdminAuthLoginInterface = {};
   constructor(
     private _adminService: AdminServiceService,
-    private _sessionService: SessionService
+    private _sessionService: SessionService,
+    private _router: Router
   ) { }
 
   ngOnInit(): void {
-    if (this._sessionService.isAdminLoggedIn()) {
-      var session = this._sessionService.getAdminSession();
-      if (session) {
-        console.log(session);
-
-        this.admin = JSON.parse(session);
-      }
+    if (this._sessionService.isPatientLoggedIn()) {
+      this._router.navigate(['/admin/dashboard'])
     }
+    // if (this._sessionService.isAdminLoggedIn()) {
+    //   var session = this._sessionService.getAdminSession();
+    //   if (session) {
+    //     this.admin = JSON.parse(session);
+    //   }
+    // }
   }
   onClickSubmit(result: AdminAuthLoginInterface) {
     this._adminService.adminAuthentication(result).subscribe(
