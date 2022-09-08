@@ -28,7 +28,7 @@ export class PatientLoginComponent implements OnInit {
     if (result != null) {
       this._patientService.patientLogin(result).subscribe(
         (response: any) => {
-          console.log(response);
+          console.log("Patient login response", response);
           // set state here
         },
         (error: any) => {

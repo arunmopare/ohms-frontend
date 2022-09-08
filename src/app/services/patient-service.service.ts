@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { PatientAccount, PatientAuthLoginInterface } from '../patient/patient.interface';
 
@@ -12,7 +13,7 @@ export class PatientService {
 
   private _registrationRoute = "patient/register"
 
-  private _loginRoute = "";
+  private _loginRoute = "patient/login";
 
   private _registerUserUrl = this._apiEndpoint + this._registrationRoute;
 
@@ -23,8 +24,8 @@ export class PatientService {
     return this.http.post<any>(this._registerUserUrl, data);
   }
 
-  patientLogin(data: PatientAuthLoginInterface): any {
-    console.log('data', data);
+  patientLogin(data: PatientAuthLoginInterface): Observable<PatientAccount> {
+    console.log('PatientLoginData', data);
     return this.http.post<any>(this._loginRoute, data);
   }
 
