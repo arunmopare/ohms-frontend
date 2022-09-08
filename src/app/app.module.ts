@@ -24,6 +24,8 @@ import { AdminCommonHeaderComponent } from './admin/admin-common-header/admin-co
 
 import { HospitalListComponent } from './admin/hospital-list/hospital-list.component';
 import { AdminAddHospitalComponent } from './admin/admin-add-hospital/admin-add-hospital.component';
+import { HospitalLoginComponent } from './hospital/hospital-login/hospital-login.component';
+import { DoctorLoginComponent } from './doctor/doctor-login/doctor-login.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { AdminAddHospitalComponent } from './admin/admin-add-hospital/admin-add-
     AdminCommonHeaderComponent,
     HospitalListComponent,
     AdminAddHospitalComponent,
+    HospitalLoginComponent,
+    DoctorLoginComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
   providers: [],

@@ -4,10 +4,12 @@ import { AdminAddHospitalComponent } from "./admin/admin-add-hospital/admin-add-
 import { AdminDashboardComponent } from "./admin/admin-dashboard/admin-dashboard.component";
 import { AdminLoginComponent } from "./admin/admin-login/admin-login.component";
 import { HospitalListComponent } from "./admin/hospital-list/hospital-list.component";
+import { DoctorLoginComponent } from "./doctor/doctor-login/doctor-login.component";
 import { AboutusComponent } from "./home/aboutus/aboutus.component";
 import { ContactusComponent } from "./home/contactus/contactus.component";
 import { HomeComponent } from "./home/home.component";
 import { SearchHospitalComponent } from "./home/search-hospital/search-hospital.component";
+import { HospitalLoginComponent } from "./hospital/hospital-login/hospital-login.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { PatientDashboardComponent } from "./patient/patient-dashboard/patient-dashboard.component";
 import { PatientLoginComponent } from "./patient/patient-login/patient-login.component";
@@ -24,13 +26,15 @@ const routes: Routes = [
   { path: "hospitalList", component: SearchHospitalComponent },
   { path: "patient/registration", component: PatientRegistrationComponent },
   { path: "patient/dashboard", component: PatientDashboardComponent },
-  { path: 'patient/profile', component: PatientProfileComponent },
+  { path: "patient/profile", component: PatientProfileComponent },
   { path: "patient/login", component: PatientLoginComponent },
   { path: "patient/update", component: PatientUpdateProfileComponent },
   { path: "admin/login", component: AdminLoginComponent },
   { path: "admin/dashboard", component: AdminDashboardComponent },
   { path: "admin/hspList", component: HospitalListComponent },
   { path: "admin/addHspOpt", component: AdminAddHospitalComponent },
+  { path: "hospital/login", component: HospitalLoginComponent },
+  { path: "dr/login", component: DoctorLoginComponent },
 
   { path: "**", component: PageNotFoundComponent },
 ];
@@ -39,7 +43,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 export const routingComponents = [
   HomeComponent,
   AboutusComponent,
@@ -50,5 +54,5 @@ export const routingComponents = [
   PatientRegistrationComponent,
   PatientProfileComponent,
   PatientLoginComponent,
-  PatientUpdateProfileComponent
+  PatientUpdateProfileComponent,
 ];
