@@ -11,16 +11,12 @@ import { ContactusComponent } from "./home/contactus/contactus.component";
 import { AdminComponent } from "./admin/admin.component";
 import { SearchHospitalComponent } from "./home/search-hospital/search-hospital.component";
 import { FormsModule } from "@angular/forms";
-import { PatientComponent } from './patient/patient.component';
-import { PatientRegistrationComponent } from './patient/patient-registration/patient-registration.component';
-import { PatientLoginComponent } from './patient/patient-login/patient-login.component';
-import { PatientDashboardComponent } from './patient/patient-dashboard/patient-dashboard.component';
-<<<<<<< HEAD
-import { PatientCommonHeaderComponent } from './patient/patient-common-header/patient-common-header.component';
-=======
-import { PatientProfileComponent } from './patient/patient-profile/patient-profile.component';
->>>>>>> 70199b58ca77e1335212b49e51f1e3fc9b944f29
-
+import { PatientComponent } from "./patient/patient.component";
+import { PatientRegistrationComponent } from "./patient/patient-registration/patient-registration.component";
+import { PatientLoginComponent } from "./patient/patient-login/patient-login.component";
+import { PatientDashboardComponent } from "./patient/patient-dashboard/patient-dashboard.component";
+import { PatientCommonHeaderComponent } from "./patient/patient-common-header/patient-common-header.component";
+import { PatientProfileComponent } from "./patient/patient-profile/patient-profile.component";
 
 @NgModule({
   declarations: [
@@ -36,14 +32,11 @@ import { PatientProfileComponent } from './patient/patient-profile/patient-profi
     PatientRegistrationComponent,
     PatientLoginComponent,
     PatientDashboardComponent,
-<<<<<<< HEAD
     PatientCommonHeaderComponent,
-=======
     PatientProfileComponent,
->>>>>>> 70199b58ca77e1335212b49e51f1e3fc9b944f29
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
