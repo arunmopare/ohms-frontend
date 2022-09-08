@@ -5,7 +5,7 @@ import { ROOT_API_ENDPOINT } from "./constants";
 @Injectable({
   providedIn: "root",
 })
-export class AdminServiceService {
+export class AdminService {
   private _apiEndpoint = ROOT_API_ENDPOINT;
   private _loginRoute = "admin/AuthentAdmlogin";
   private _authAdminUrl = this._apiEndpoint + this._loginRoute;

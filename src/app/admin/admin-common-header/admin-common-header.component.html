@@ -9,34 +9,21 @@
       </div>
     </div>
     <div class="col-9 d-flex justify-content-end align-items-center">
-      <a class="navbar-band ml-5" routerLink="/home"
-        ><img
-          style="border-radius: 50%; width: 45px; height: 45px"
-          src="../../../assets/image/mainlogo/mainlogo1.jpg"
-        />
+      <a class="navbar-band ml-5" routerLink="/home"><img style="border-radius: 50%; width: 45px; height: 45px"
+          src="../../../assets/image/mainlogo/mainlogo1.jpg" />
       </a>
 
-      <a
-        class="btn btn-sm btn-white ml-4 mr-3"
-        routerLink="/admin/addHspOpt"
-        role="button"
-        ><i class="far fa-plus-square"></i> Register Hospital</a
-      >
+      <a class="btn btn-sm btn-white ml-4 mr-3" routerLink="/admin/addHspOpt" role="button"><i
+          class="far fa-plus-square"></i> Register Hospital</a>
 
-      <a class="btn btn-sm btn-white mr-3" routerLink="/admin/hspList" role="button"
-        ><i class="fas fa-hospital"></i> Hospitals</a
-      >
+      <a class="btn btn-sm btn-white mr-3" routerLink="/admin/hspList" role="button"><i class="fas fa-hospital"></i>
+        Hospitals</a>
 
-      <a
-        class="btn btn-sm btn-white mr-3"
-        routerLink="/admin/contactList"
-        role="button"
-        ><i class="fas fa-comment-medical"></i> User Messages</a
-      >
+      <a class="btn btn-sm btn-white mr-3" routerLink="/admin/contactList" role="button"><i
+          class="fas fa-comment-medical"></i> User Messages</a>
 
-      <a class="btn btn-sm btn-white mr-3" routerLink="/admin/admlogout" role="button"
-        ><i class="fas fa-sign-out-alt"></i> Logout</a
-      >
+      <a class="btn btn-sm btn-white mr-3" (click)="logAdminOut()" role="button"><i class="fas fa-sign-out-alt"></i>
+        Logout</a>
     </div>
   </div>
 </body>

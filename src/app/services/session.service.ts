@@ -5,7 +5,7 @@ import { Router } from "@angular/router";
   providedIn: "root",
 })
 export class SessionService {
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
   setPatientSession(patientData: any) {
     localStorage.setItem("patientData", JSON.stringify(patientData));
     this.router.navigate(["/patient/dashboard"]);

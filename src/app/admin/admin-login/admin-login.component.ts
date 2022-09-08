@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AdminAuthLoginInterface } from "../admin";
-import { AdminServiceService } from "../../services/admin-service.service";
+import { AdminService } from "../../services/admin-service.service";
 import { SessionService } from "src/app/services/session.service";
 import { Router } from "@angular/router";
 @Component({
@@ -12,7 +12,7 @@ export class AdminLoginComponent implements OnInit {
   AdmLogFail: number = 1;
   admin: AdminAuthLoginInterface = {};
   constructor(
-    private _adminService: AdminServiceService,
+    private _adminService: AdminService,
     private _sessionService: SessionService,
     private _router: Router
   ) { }
