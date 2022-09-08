@@ -13,7 +13,7 @@ export class PatientService {
 
   private _registrationRoute = "patient/register"
 
-  private _loginRoute = "patient/login";
+  private _loginRoute = "patient/AuthPtlogin";
 
   private _registerUserUrl = this._apiEndpoint + this._registrationRoute;
   private _loginPatientUrl = this._apiEndpoint + this._loginRoute;
