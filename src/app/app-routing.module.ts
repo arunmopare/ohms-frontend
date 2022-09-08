@@ -5,7 +5,7 @@ import { ContactusComponent } from "./home/contactus/contactus.component";
 import { HomeComponent } from "./home/home.component";
 import { SearchHospitalComponent } from "./home/search-hospital/search-hospital.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
-import { LoginComponent } from "./patient/login/login.component";
+import { PatientLoginComponent } from "./patient/patient-login/patient-login.component";
 import { PatientRegistrationComponent } from "./patient/patient-registration/patient-registration.component";
 import { PatientComponent } from "./patient/patient.component";
 
@@ -19,7 +19,7 @@ const routes: Routes = [
     path: "patient/registration", component: PatientRegistrationComponent
   },
   {
-    path: "patient/login", component: LoginComponent
+    path: "patient/login", component: PatientLoginComponent
   },
   { path: "**", component: PageNotFoundComponent },
 ];
