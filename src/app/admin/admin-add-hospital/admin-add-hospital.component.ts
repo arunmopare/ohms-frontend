@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-add-hospital.component.css']
 })
 export class AdminAddHospitalComponent implements OnInit {
-
+  hspReg = 3;
   constructor() { }
 
   ngOnInit(): void {

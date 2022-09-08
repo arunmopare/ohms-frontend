@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { AdminAddHospitalComponent } from "./admin/admin-add-hospital/admin-add-hospital.component";
 import { AdminDashboardComponent } from "./admin/admin-dashboard/admin-dashboard.component";
 import { AdminLoginComponent } from "./admin/admin-login/admin-login.component";
 import { HospitalListComponent } from "./admin/hospital-list/hospital-list.component";
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: "admin/login", component: AdminLoginComponent },
   { path: "admin/dashboard", component: AdminDashboardComponent },
   { path: "admin/hspList", component: HospitalListComponent },
+  { path: "admin/addHspOpt", component: AdminAddHospitalComponent },
 
   { path: "**", component: PageNotFoundComponent },
 ];
