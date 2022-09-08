@@ -16,6 +16,7 @@ export class PatientService {
   private _loginRoute = "patient/login";
 
   private _registerUserUrl = this._apiEndpoint + this._registrationRoute;
+  private _loginPatientUrl = this._apiEndpoint + this._loginRoute;
 
   constructor(private http: HttpClient) { }
 
@@ -26,7 +27,7 @@ export class PatientService {
 
   patientLogin(data: PatientAuthLoginInterface): Observable<PatientAccount> {
     console.log('PatientLoginData', data);
-    return this.http.post<any>(this._loginRoute, data);
+    return this.http.post<any>(this._loginPatientUrl, data);
   }
 
 }
