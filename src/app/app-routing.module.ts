@@ -7,6 +7,7 @@ import { SearchHospitalComponent } from "./home/search-hospital/search-hospital.
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { PatientDashboardComponent } from "./patient/patient-dashboard/patient-dashboard.component";
 import { PatientLoginComponent } from "./patient/patient-login/patient-login.component";
+import { PatientProfileComponent } from "./patient/patient-profile/patient-profile.component";
 import { PatientRegistrationComponent } from "./patient/patient-registration/patient-registration.component";
 import { PatientComponent } from "./patient/patient.component";
 
@@ -16,15 +17,10 @@ const routes: Routes = [
   { path: "aboutus", component: AboutusComponent },
   { path: "contactus", component: ContactusComponent },
   { path: "hospitalList", component: SearchHospitalComponent },
-  {
-    path: "patient/registration", component: PatientRegistrationComponent
-  },
-  {
-    path: "patient/dashboard", component: PatientDashboardComponent
-  },
-  {
-    path: "patient/login", component: PatientLoginComponent
-  },
+  { path: "patient/registration", component: PatientRegistrationComponent },
+  { path: "patient/dashboard", component: PatientDashboardComponent },
+  { path: 'patient/profile', component: PatientProfileComponent },
+  { path: "patient/login", component: PatientLoginComponent },
   { path: "**", component: PageNotFoundComponent },
 ];
 
@@ -40,5 +36,6 @@ export const routingComponents = [
   SearchHospitalComponent,
   PageNotFoundComponent,
   PatientComponent,
-  PatientRegistrationComponent
+  PatientRegistrationComponent,
+  PatientProfileComponent
 ];

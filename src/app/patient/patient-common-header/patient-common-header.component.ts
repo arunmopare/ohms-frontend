@@ -9,7 +9,7 @@ import { PatientAccount } from "../patient.interface";
 })
 export class PatientCommonHeaderComponent implements OnInit {
   patient: PatientAccount = {};
-  constructor(private _sessionService: SessionService) {}
+  constructor(private _sessionService: SessionService) { }
 
   ngOnInit(): void {
     if (this._sessionService.isPatientLoggedIn()) {
@@ -18,5 +18,8 @@ export class PatientCommonHeaderComponent implements OnInit {
         this.patient = JSON.parse(session);
       }
     }
+  }
+  logPatientOut() {
+    this._sessionService.logOutPatient()
   }
 }
